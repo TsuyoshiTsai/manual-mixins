@@ -1,0 +1,22 @@
+// @include vertical-parent(1rem, middle);
+// @include vertical-parent(1rem, middle);
+
+// $height(unit)
+// $font-size(unit)
+// $align(string): baseline, top, middle, bottom, text-top, text-bottom, sub, super
+@mixin vertical-parent($height, $align) {
+  height: $height;
+  font-size: 0;
+
+  &:before {
+    content: '';
+    display: inline-block;
+    width: 0;
+    height: 100%;
+    vertical-align: $align;
+  }
+}
+@mixin vertical-child($font-size, $align) {
+  font-size: $font-size;
+  vertical-align: $align;
+}

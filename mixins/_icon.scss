@@ -1,0 +1,27 @@
+// @include icon(1rem, 1rem, './image/icon.png');
+
+// $width(unit)
+// $height(unit)
+// $url(string): 'path'
+@mixin icon($width, $height, $url) {
+  &:before {
+    @include icon-position;
+    @include icon-style($width, $height, $url);
+  }
+}
+@mixin icon-position() {
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+@mixin icon-style($width, $height, $url) {
+  content: '';
+  display: inline-block;
+  width: $width;
+  height: $height;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-image: url($url);
+}

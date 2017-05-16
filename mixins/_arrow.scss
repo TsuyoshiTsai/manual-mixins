@@ -1,0 +1,66 @@
+// @include arrow(left, 1rem, 1rem, grey);
+// @include arrow-with-border(left, 1rem, 1rem, grey, 1px, red);
+
+// $position(string): top, right, bottom, left
+// $width(unit)
+// $height(unit)
+// $color(color)
+// $border-size(unit)
+// $border-color(color)
+@mixin arrow($position, $width, $height, $color) {
+  &:after {
+    @include arrow-position($position);
+    @include arrow-style($position, $width, $height, $color);
+  }
+}
+@mixin arrow-with-border($position, $width, $height, $color, $border-size, $border-color) {
+  &:before {
+    @include arrow-position($position);
+    @include arrow-style($position, $width, $height, $border-color, $border-size);
+  }
+
+  &:after {
+    @include arrow-position($position);
+    @include arrow-style($position, $width, $height, $color);
+  }
+}
+@mixin arrow-position($position) {
+  position: absolute;
+  @if $position == top {
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -100%);
+  }
+  @else if $position == right {
+    top: 50%;
+    right: 0;
+    transform: translate(100%, -50%);
+  }
+  @else if $position == bottom {
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 100%);
+  }
+  @else if $position == left {
+    top: 50%;
+    left: 0;
+    transform: translate(-100%, -50%);
+  }
+}
+@mixin arrow-style($position, $width, $height, $color, $border-size: 0) {
+  $width: ($width / 2);
+  $position: position-reverse($position);
+  @if $border-size != 0 {
+    $width: ($width + ($border-size / 2));
+    $height: ($height + $border-size);
+  }
+
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  border-width: $height $width 0 $width;
+  border-style: solid;
+  border-color: transparent;
+  border-#{$position}-color: $color;
+}
