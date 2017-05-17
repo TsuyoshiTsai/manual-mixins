@@ -4,7 +4,7 @@
 // $height(unit)
 // $font-size(unit)
 // $align(string): baseline, top, middle, bottom, text-top, text-bottom, sub, super
-@mixin vertical-parent($height, $align) {
+@mixin vertical-parent($height, $align: middle) {
   height: $height;
   font-size: 0;
 
@@ -16,7 +16,7 @@
     vertical-align: $align;
   }
 }
-@mixin vertical-child($font-size, $align) {
+@mixin vertical-child($font-size, $align: middle) {
   font-size: $font-size;
   vertical-align: $align;
 }
