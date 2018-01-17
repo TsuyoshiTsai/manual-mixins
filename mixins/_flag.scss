@@ -5,11 +5,26 @@
 // $height(unit)
 // $color(color)
 // $shadow(multiple value): x-pos y-pos blur color
+
 @import 'arrow';
+
+@function position-reverse($position) {
+  @if $position == top {
+    $position: bottom;
+  } @else if $position == right {
+    $position: left;
+  } @else if $position == bottom {
+    $position: top;
+  } @else if $position == left {
+    $position: right;
+  }
+
+  @return $position;
+}
+
 @mixin flag($position, $width, $height, $color, $shadow: 1px 1px 1px hsla(0, 0%, 0%, .25)) {
   $position: position-reverse($position);
   $border-height: ($width / 4);
-
   position: relative;
   display: block;
   width: $width;
