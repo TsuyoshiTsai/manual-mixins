@@ -1,1 +1,1 @@
-import '_mixins.scss'
+import './mixins.scss'
