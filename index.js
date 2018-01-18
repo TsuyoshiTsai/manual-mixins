@@ -16,6 +16,6 @@ exports.resources = [
   './mixins/size.scss',
   './mixins/status.scss',
   './mixins/text-truncate.scss',
-  './mixins/triangel.scss',
+  './mixins/triangle.scss',
   './mixins/vertical-align.scss',
 ].map(file => path.resolve(__dirname, file))
