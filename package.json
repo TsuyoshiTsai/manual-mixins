@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/TsuyoshiTsai/mixins/issues"
   },
-  "homepage": "https://github.com/TsuyoshiTsai/mixins#readme"
+  "homepage": "https://github.com/TsuyoshiTsai/mixins#readme",
+  "dependencies": {
+    "path": "^0.12.7"
+  }
 }
