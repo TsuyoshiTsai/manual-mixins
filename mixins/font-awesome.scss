@@ -1,4 +1,8 @@
-@import url("//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css");
+/*
+ * If you intend to use font awesome for icons,
+ * it's necessary to import this url on your own project.
+ * @import url("//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css");
+**/
 
 @mixin font-awesome-element($char, $pseudo: "before") {
   display: inline-block;
