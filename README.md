@@ -1,9 +1,9 @@
-# Usage
+# Installation
 ```
-npm i mixins-scss -S
+npm i git+https://github.com/TsuyoshiTsai/mixins.git -S
 ```
 
-# Vue
+# Config Settings (Vue)
 See [Using Pre-Processors](https://vue-loader.vuejs.org/en/configurations/pre-processors.html) - Loading a global settings file part.
 
 As an example, if you are using [vuejs-templates/webpack](https://github.com/vuejs-templates/webpack), modify `build/utils.js` like so:
