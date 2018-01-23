@@ -1,4 +1,5 @@
 /*
+ * By sass-resources-loader
  * Avoid using SASS @import rules inside resources files as it slows down incremental builds.
  * See https://github.com/shakacode/sass-resources-loader/issues/46
  */
