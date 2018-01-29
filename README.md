@@ -6,18 +6,18 @@ npm i -S git+https://github.com/TsuyoshiTsai/mixins.git
 
 # Settings
 
-## SCSS
+## SCSS only
 
 Just import `mixins.scss` in which scss file you need mixins
 
-```
+```scss
 // any.scss
-@import "~/mixins-scss/mixins.scss";
+@import "~mixins-scss/mixins.scss";
 ```
 
-## sass-resources-loader
+## Use sass-resources-loader
 
-Install [sass-resources-loader](https://github.com/shakacode/sass-resources-loader) first
+Install [sass-resources-loader](https://github.com/shakacode/sass-resources-loader)
 
 ```
 npm i -S sass-resources-loader
@@ -29,21 +29,23 @@ See [Using Pre-Processors](https://vue-loader.vuejs.org/en/configurations/pre-pr
 
 As an example, if you are using [vuejs-templates/webpack](https://github.com/vuejs-templates/webpack), modify `build/utils.js` like so:
 
-```
+```js
+// build/utils.js
 scss: generateLoaders('sass').concat({
   loader: 'sass-resources-loader',
   options: {
-    resources: require('mixins-scss').resources
+    resources: require('cloud-interactive-mixins-scss').resources,
   }
 }),
 ```
 
 ### React
 
-See [sass-resources-loader](https://github.com/shakacode/sass-resources-loader)
+See [sass-resources-loader](https://github.com/shakacode/sass-resources-loader) - webpack@2 part
 
-```
-/* Webpack@2: webpack.config.js */
+```js
+// config/webpack.config.dev.js
+// config/webpack.config.prod.js
 
 module: {
   rules: [
@@ -58,7 +60,7 @@ module: {
         {
           loader: 'sass-resources-loader',
           options: {
-            resources: require('mixins-scss').resources
+            resources: require('cloud-interactive-mixins-scss').resources,
           },
         },
       ],
